@@ -2,9 +2,6 @@ set number
 set hls
 set omnifunc=syntaxcomplete#Complete
 
-map ] $
-noremap [ _
-
 set cursorline
 colorscheme gruvbox
 
