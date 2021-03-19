@@ -14,5 +14,5 @@ au TabLeave * let g:lasttab = tabpagenr()
 map gl :exe "tabn ".g:lasttab<CR>
 
 set termwinsize=15x0
-map ` :below terminal<cr>
+map <leader>` :below terminal<cr>
 tnoremap <Esc> <C-\><C-n>:set nonumber<cr>
