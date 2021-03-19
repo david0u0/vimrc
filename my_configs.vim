@@ -12,6 +12,7 @@ map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/
 let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
 map gl :exe "tabn ".g:lasttab<CR>
+map gr gT
 
 set termwinsize=15x0
 map <leader>` :below terminal<cr>
