@@ -9,6 +9,8 @@ map <leader>e :e <C-r>=expand("%:p:h")<cr>/
 map <leader>se :sp <C-r>=expand("%:p:h")<cr>/
 map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/
 
+map Y y$
+
 let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
 map gl :exe "tabn ".g:lasttab<CR>
