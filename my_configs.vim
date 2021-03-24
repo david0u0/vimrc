@@ -27,3 +27,4 @@ let g:ack_mappings = {'H': '<C-W><CR><C-W>K<C-W>b', 'go': '<CR><C-W>p', 't': '<C
 set notimeout notimeout
 
 autocmd BufWinEnter * silent! RltvNmbr
+
