@@ -128,6 +128,7 @@ let g:lightline = {
       \   'right': [ [ 'lineinfo' ], ['percent'] ]
       \ },
       \ 'component': {
+      \   'filename': '%n:%t',
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
       \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
