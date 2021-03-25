@@ -225,6 +225,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
+map <leader>ts :tab split<cr>
 map <leader>t<leader> :tabnext 
 
 " Opens a new tab with the current buffer's path
@@ -300,23 +301,6 @@ endif
 " map <leader>sa zg
 " map <leader>s? z=
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -361,7 +345,7 @@ function! VisualSelection(direction, extra_filter) range
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
     if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
+        call CmdLine("LAck '" . l:pattern . "' " )
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     endif
