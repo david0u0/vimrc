@@ -35,3 +35,6 @@ map g; <Plug>Sneak_,
 set hidden
 set runtimepath+=~/.vim_runtime/my_plugins/LanguageClient-neovim
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+set notimeout
+set ttimeout
