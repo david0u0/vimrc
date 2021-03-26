@@ -16,21 +16,10 @@ call pathogen#helptags()
 
 
 """"""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
-
-
-""""""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
 map <leader>f :MRU<CR>
-
 
 """"""""""""""""""""""""""""""
 " => YankStack
@@ -52,7 +41,7 @@ let g:ctrlp_map = '<C-f>'
 map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
-map <leader>b :CtrlPBuffer<cr>
+map <leader>o :CtrlPBuffer<cr>
 
 " Quickly find and open a recently opened file
 map <leader>f :CtrlPMRU<CR>
