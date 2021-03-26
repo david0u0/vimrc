@@ -41,6 +41,7 @@ filetype indent on
 set autoread
 au FocusGained,BufEnter * checktime
 
+let mapleader = ','
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -222,7 +223,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>ts :tab split<cr>
+map <leader>tt :tab split<cr>
 map <leader>t<leader> :tabnext 
 
 " Opens a new tab with the current buffer's path

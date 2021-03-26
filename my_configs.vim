@@ -29,4 +29,9 @@ let g:ack_mappings = {'H': '<C-W><CR><C-W>K<C-W>b', 'go': '<CR><C-W>p', 't': '<C
 set notimeout notimeout
 
 autocmd BufWinEnter * silent! RltvNmbr
+" remap backward search, since we map , as leader
+map g; <Plug>Sneak_,
 
+set hidden
+set runtimepath+=~/.vim_runtime/my_plugins/LanguageClient-neovim
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
