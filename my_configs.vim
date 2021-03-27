@@ -38,3 +38,5 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
 set notimeout
 set ttimeout
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
