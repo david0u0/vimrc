@@ -34,7 +34,9 @@ map g; <Plug>Sneak_,
 
 set hidden
 set runtimepath+=~/.vim_runtime/my_plugins/LanguageClient-neovim
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nmap <silent> gh <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> gu <Plug>(lcn-references)
 
 set notimeout
 set ttimeout
@@ -44,3 +46,4 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<PageDown>"
 let g:UltiSnipsJumpBackwardTrigger="<PageUp>"
+
