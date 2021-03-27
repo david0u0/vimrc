@@ -40,3 +40,7 @@ set notimeout
 set ttimeout
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<PageDown>"
+let g:UltiSnipsJumpBackwardTrigger="<PageUp>"

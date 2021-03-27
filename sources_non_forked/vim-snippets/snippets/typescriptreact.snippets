@@ -1,4 +1,9 @@
 extends typescript
 
 snippet uses "use state"
-	const [${1}: ${2:any}] = React.useState(${3});
+	const [${1:state}, set${2:State}] = React.useState(${3:default});
+
+snippet fnx "component"
+	function ${1:name}(props: ${2:Props}): JSX.Element {
+		${4}
+	}

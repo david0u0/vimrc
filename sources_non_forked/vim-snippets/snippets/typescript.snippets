@@ -1,4 +1,14 @@
-snippet asf "async func"
-	async function ${1}(${2}): Promise<${3}> {
+snippet afn "async func"
+	async function ${1:name}(${2:params}): Promise<${3:ty}> {
 		${4}
+	}
+
+snippet fn "func"
+	function ${1:name}(${2:param}): ${3:ty} {
+		${4}
+	}
+
+snippet for "for of"
+	for (let ${1:e} of ${2:arr}) {
+		${5}
 	}
