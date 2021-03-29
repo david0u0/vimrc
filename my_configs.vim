@@ -1,7 +1,6 @@
 set number
 set hls
-set omnifunc=syntaxcomplete#Complete
-
+set omnifunc=syntaxcomplete#Complete " a sad fallback for those without lsp support.
 set cursorline
 colorscheme gruvbox
 
@@ -46,4 +45,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<PageDown>"
 let g:UltiSnipsJumpBackwardTrigger="<PageUp>"
+
+" DO NOT use &omnifunc, it will be something stupid like ccomplete#Complete
+autocmd FileType * call SuperTabChain("LanguageClient#complete", "<c-p>")
 
