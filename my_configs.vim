@@ -1,6 +1,5 @@
 set number
 set hls
-set omnifunc=syntaxcomplete#Complete " a sad fallback for those without lsp support.
 set cursorline
 colorscheme gruvbox
 
@@ -47,5 +46,13 @@ let g:UltiSnipsJumpForwardTrigger="<PageDown>"
 let g:UltiSnipsJumpBackwardTrigger="<PageUp>"
 
 " DO NOT use &omnifunc, it will be something stupid like ccomplete#Complete
-autocmd FileType * call SuperTabChain("LanguageClient#complete", "<c-p>")
+autocmd FileType * call SuperTabChain("MySuperTabComplete", "<c-p>") 
+
+function! MySuperTabComplete(findstart, base)
+    if exists('b:LanguageClient_isServerRunning') && b:LanguageClient_isServerRunning
+        return LanguageClient#complete(a:findstart, a:base)
+    else
+        return syntaxcomplete#Complete(a:findstart, a:base) " a sad fallback for those without lsp support.
+    endif
+endfunction
 
