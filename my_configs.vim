@@ -58,7 +58,6 @@ endfunction
 
 function! s:goyo_enter()
     RltvNmbr!
-    echo "aaa"
 endfunction
 function! s:goyo_leave()
     RltvNmbr
@@ -70,4 +69,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:startify_session_persistence=1
 let g:startify_session_dir="~/.vim_runtime/sessions"
 
-
+autocmd BufWritePre * if exists('b:LanguageClient_isServerRunning') && b:LanguageClient_isServerRunning |
+            \ call LanguageClient_textDocument_formatting_sync() |
+            \ endif
