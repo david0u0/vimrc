@@ -65,3 +65,9 @@ function! s:goyo_leave()
 endfunc
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" startify
+let g:startify_session_persistence=1
+let g:startify_session_dir="~/.vim_runtime/sessions"
+
+
