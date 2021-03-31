@@ -56,3 +56,12 @@ function! MySuperTabComplete(findstart, base)
     endif
 endfunction
 
+function! s:goyo_enter()
+    RltvNmbr!
+    echo "aaa"
+endfunction
+function! s:goyo_leave()
+    RltvNmbr
+endfunc
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
