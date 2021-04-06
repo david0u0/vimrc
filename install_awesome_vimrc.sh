@@ -4,6 +4,7 @@ set -e
 cd ~/.vim_runtime
 
 echo 'set runtimepath+=~/.vim_runtime
+let g:my_format_on_save_list = []
 
 source ~/.vim_runtime/vimrcs/basic.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
