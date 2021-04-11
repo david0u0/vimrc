@@ -65,12 +65,23 @@ endfunc
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-" startify
-let g:startify_session_persistence=1
-let g:startify_session_dir="~/.vim_runtime/sessions"
-
+function! MyFormatOnSave()
+    if exists('b:LanguageClient_isServerRunning') && b:LanguageClient_isServerRunning
+        call LanguageClient_textDocument_formatting_sync()
+    endif
+endfunction
 if exists('g:my_format_on_save_list')
-    execute "autocmd FileType " . join(g:my_format_on_save_list, ",") . " autocmd BufWritePre * call LanguageClient_textDocument_formatting_sync()"
+    execute "autocmd FileType " . join(g:my_format_on_save_list, ",") . " autocmd BufWritePre * call MyFormatOnSave()"
 endif
 
 let g:ctrlp_mruf_relative = 1 "make ctrlp find mru in working dir
+set completeopt=menu
+
+" startify
+let g:startify_session_persistence=1
+let g:startify_session_dir="~/.vim_runtime/sessions"
+let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ ]
