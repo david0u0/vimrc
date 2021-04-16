@@ -32,6 +32,7 @@ map g; <Plug>Sneak_,
 
 set hidden
 set runtimepath+=~/.vim_runtime/my_plugins/LanguageClient-neovim
+let g:LanguageClient_hoverPreview = 'always'
 nmap <silent> gh <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> gu <Plug>(lcn-references)
@@ -85,3 +86,8 @@ let g:startify_lists = [
       \ { 'type': 'files',     'header': ['   MRU']            },
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ ]
+
+" indent
+noremap { [{
+noremap } ]}
+autocmd BufWinEnter * silent! IndentGuidesEnable
