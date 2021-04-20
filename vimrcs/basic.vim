@@ -228,7 +228,7 @@ map <leader>t<leader> :tabnext
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>cd :cd <C-r>=expand("%:p:h")<cr>
 
 " Specify the behavior when switching between buffers 
 try
