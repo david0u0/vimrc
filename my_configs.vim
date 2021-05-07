@@ -3,6 +3,7 @@ set hls
 set cursorline
 colorscheme gruvbox
 
+map gf gF
 map <leader>e :e <C-r>=expand("%:p:h")<cr>/
 map <leader>se :sp <C-r>=expand("%:p:h")<cr>/
 map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/
