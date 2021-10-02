@@ -1,12 +1,19 @@
+set showcmd
 set number
 set hls
 set cursorline
-colorscheme gruvbox
+
+function! SetColorScheme()
+    colorscheme peaksea
+endfunction
+
+call SetColorScheme()
 
 map gf gF
 map <leader>e :e <C-r>=expand("%:p:h")<cr>/
 map <leader>se :sp <C-r>=expand("%:p:h")<cr>/
 map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/
+map <leader>r :execute 'cd ' . b:LanguageClient_projectRoot<cr>
 
 map Y y$
 
@@ -63,6 +70,7 @@ function! s:goyo_enter()
 endfunction
 function! s:goyo_leave()
     RltvNmbr
+    call SetColorScheme()
 endfunc
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
@@ -92,3 +100,15 @@ let g:startify_lists = [
 noremap { [{
 noremap } ]}
 autocmd BufWinEnter * silent! IndentGuidesEnable
+
+packadd! matchit
+if exists("loaded_matchit")
+    if !exists("b:match_words")
+        let b:match_ignorecase = 0
+        let b:match_words =
+                    \ '\%(\%(\%(^\|[;=]\)\s*\)\@<=\%(class\|module\|while\|begin\|until\|for\|if\|unless\|def\|case\)\|\<do\)\>:' .
+                    \ '\<\%(else\|elsif\|ensure\|rescue\|when\)\>:\%(^\|[^.]\)\@<=\<end\>'
+    endif
+endif
+
+nnoremap ' `
