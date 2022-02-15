@@ -39,7 +39,7 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
-au FocusGained,BufEnter * checktime
+au FocusGained,BufEnter * silent! checktime
 
 let mapleader = ','
 " Fast saving
