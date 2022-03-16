@@ -10,10 +10,12 @@ endfunction
 call SetColorScheme()
 
 map gf gF
-map <leader>e :e <C-r>=expand("%:p:h")<cr>/
-map <leader>se :sp <C-r>=expand("%:p:h")<cr>/
-map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/
-map <leader>r :execute 'cd ' . b:LanguageClient_projectRoot<cr>
+map <leader>q :q <cr>
+map <leader>e :e <C-r>=expand("%:p:h")<cr>/<c-f>
+map <leader>se :sp <C-r>=expand("%:p:h")<cr>/<c-f>
+map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/<c-f>
+map <leader>r :execute 'cd ' . b:LanguageClient_projectRoot<cr>:pwd<cr>
+map <leader>/ :%s/<C-r>///gn<cr>
 
 map Y y$
 
