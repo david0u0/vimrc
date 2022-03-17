@@ -4,7 +4,7 @@ set hls
 set cursorline
 
 function! SetColorScheme()
-    colorscheme peaksea
+    colorscheme gruvbox
 endfunction
 
 call SetColorScheme()
