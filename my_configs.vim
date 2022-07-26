@@ -18,6 +18,7 @@ map <leader>r :execute 'cd ' . b:LanguageClient_projectRoot<cr>:pwd<cr>
 map <leader>/ :%s/<C-r>///gn<cr>
 
 map Y y$
+map - g_
 
 let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
@@ -41,7 +42,6 @@ autocmd BufWinEnter * silent! RltvNmbr
 map g; <Plug>Sneak_,
 
 set hidden
-set runtimepath+=~/.vim_runtime/my_plugins/LanguageClient-neovim
 let g:LanguageClient_hoverPreview = 'always'
 nmap <silent> gh <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
@@ -50,7 +50,7 @@ nmap <silent> gu <Plug>(lcn-references)
 set notimeout
 set ttimeout
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<PageDown>"
