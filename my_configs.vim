@@ -4,7 +4,7 @@ set hls
 set cursorline
 
 function! SetColorScheme()
-    colorscheme gruvbox
+    silent! colorscheme gruvbox
 endfunction
 
 call SetColorScheme()
@@ -14,11 +14,11 @@ map <leader>q :q <cr>
 map <leader>e :e <C-r>=expand("%:p:h")<cr>/<c-f>
 map <leader>se :sp <C-r>=expand("%:p:h")<cr>/<c-f>
 map <leader>ve :vsp <C-r>=expand("%:p:h")<cr>/<c-f>
-map <leader>r :execute 'cd ' . b:LanguageClient_projectRoot<cr>:pwd<cr>
-map <leader>/ :%s/<C-r>///gn<cr>
+map <leader>cr :execute 'cd ' . b:LanguageClient_projectRoot<cr>:pwd<cr>
+map <leader>. :%s/<C-r>///gn<cr>
 
-map Y y$
-map - g_
+noremap Y y$
+noremap - g_
 
 let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
@@ -57,7 +57,7 @@ let g:UltiSnipsJumpForwardTrigger="<PageDown>"
 let g:UltiSnipsJumpBackwardTrigger="<PageUp>"
 
 " DO NOT use &omnifunc, it will be something stupid like ccomplete#Complete
-autocmd FileType * call SuperTabChain("MySuperTabComplete", "<c-p>") 
+autocmd FileType * silent! call SuperTabChain("MySuperTabComplete", "<c-p>") 
 
 function! MySuperTabComplete(findstart, base)
     if exists('b:LanguageClient_isServerRunning') && b:LanguageClient_isServerRunning
@@ -114,3 +114,14 @@ if exists("loaded_matchit")
 endif
 
 nnoremap ' `
+
+" vim-mark
+let g:mw_no_mappings = 1
+nmap <leader>N <Plug>MarkAllClear
+nmap <leader>* <Plug>MarkSearchCurrentNext
+nmap <leader>/ <Plug>MarkSearchAnyNext
+nmap <leader># <Plug>MarkSearchCurrentPrev
+nmap <leader>? <Plug>MarkSearchAnyPrev
+nmap <leader>r <Plug>MarkRegex
+nmap <leader>m <Plug>MarkSet
+nmap <leader>N :MarkClear<cr>

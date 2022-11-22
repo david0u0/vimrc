@@ -92,13 +92,10 @@ endif
 let g:ackhighlight = 1
 
 " When you press gv you Ack after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+vnoremap <silent> <leader>g :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
-map <leader>g :LAck! 
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+nmap <leader>g :LAck! 
 
 " Do :help cope if you are unsure what cope is. It's super useful!
 "
