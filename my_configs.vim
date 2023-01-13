@@ -125,3 +125,10 @@ nmap <leader>? <Plug>MarkSearchAnyPrev
 nmap <leader>r <Plug>MarkRegex
 nmap <leader>m <Plug>MarkSet
 nmap <leader>N :MarkClear<cr>
+
+vmap <silent> <leader>r <plug>MarkRegex
+
+autocmd BufWinEnter * silent! highlight clear SpellBad
+
+set foldmethod=syntax
+set foldlevel=20
