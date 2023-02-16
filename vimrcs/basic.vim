@@ -227,9 +227,6 @@ map <leader>t<leader> :tabnext
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/<c-f>
 
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd <C-r>=expand("%:p:h")<cr><c-f>F/
-
 " Specify the behavior when switching between buffers 
 try
   set switchbuf=useopen,usetab
