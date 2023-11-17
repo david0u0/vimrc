@@ -35,7 +35,7 @@ let g:ctrlp_map = '<C-f>'
 map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
-map <leader>o :CtrlPBuffer<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 " Quickly find and open a recently opened file
 map <leader>f :CtrlPMRU<CR>

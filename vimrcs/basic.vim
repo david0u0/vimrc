@@ -45,6 +45,9 @@ let mapleader = ','
 " Fast saving
 nmap <leader>w :w<cr>
 
+" Close all split
+nmap <leader>o :on<cr>
+
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -190,8 +193,8 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-nnoremap <silent> * *``/<C-R>/\C<CR>``
-nnoremap <silent> # #``?<C-R>/\C<CR>``
+nnoremap <silent> * ml*/<C-R>/\C<CR>`l
+nnoremap <silent> # ml#?<C-R>/\C<CR>`l
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
@@ -210,9 +213,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
